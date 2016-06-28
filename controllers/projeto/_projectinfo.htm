@@ -1,0 +1,135 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawCurveTypes);
+
+
+function drawCurveTypes(){
+
+        var chartDiv = document.getElementById('chart_div');
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('date', 'Month');
+      data.addColumn('number', "Fechados");
+      data.addColumn('number', "Abertos");
+
+      data.addRows([
+        [new Date(2014, 0),  -.5,  5.7],
+        [new Date(2014, 1),   .4,  8.7],
+        [new Date(2014, 2),   .5,   12],
+        [new Date(2014, 3),  2.9, 15.3],
+        [new Date(2014, 4),  6.3, 18.6],
+        [new Date(2014, 5),    9, 20.9],
+        [new Date(2014, 6), 10.6, 19.8],
+        [new Date(2014, 7), 10.3, 16.6],
+        [new Date(2014, 8),  7.4, 13.3],
+        [new Date(2014, 9),  4.4,  9.9],
+        [new Date(2014, 10), 1.1,  6.6],
+        [new Date(2014, 11), -.2,  4.5],
+        [new Date(2015, 0),  -.5,  5.7],
+        [new Date(2015, 1),   .4,  8.7],
+        [new Date(2015, 2),   .5,   12],
+        [new Date(2015, 3),  2.9, 15.3],
+        [new Date(2015, 4),  6.3, 18.6],
+        [new Date(2015, 5),    9, 20.9],
+        [new Date(2015, 6), 10.6, 19.8],
+        [new Date(2015, 7), 10.3, 16.6],
+        [new Date(2015, 8),  7.4, 13.3],
+        [new Date(2015, 9),  4.4,  9.9],
+        [new Date(2015, 10), 1.1,  6.6],
+        [new Date(2015, 11), -.2,  4.5]
+      ]);
+
+      var materialOptions = {
+        chart: {
+          title: 'Average Temperatures and Daylight in Iceland Throughout the Year'
+        },
+        animation : {
+          'duration' : 500,
+          'startup' : true,
+          'easing' : 'in'
+        },
+        fontName : 'Open Sans',
+        fontSize : 11,
+        backgroundColor: '#f9f9f9',
+        width: 570,
+        height: 80,
+        chartArea : {
+          left : 0,
+          top : 0,
+          height : 60,
+        },
+        colors : [ 'rgb(149, 183, 83)','rgb(204, 51, 0)' ],
+        series: {
+          // Gives each series an axis name that matches the Y-axis below.
+          0: {axis: 'Temps'},
+          1: {axis: 'Daylight'}
+        },
+        axes: {
+          // Adds labels to each axis; they don't have to match the axis names.
+          y: {
+            Temps: {label: 'Temps (Celsius)'},
+            Daylight: {label: 'Daylight'}
+          }
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, materialOptions);
+    }
+</script>
+
+<div class="scoreboard">
+    <div data-control="toolbar">
+
+    	<div class="col-md-6" >
+<!-- 
+    		<div class="col-md-6" style="padding-left: 0" >
+    			<div class="scoreboard-item title-value">
+		            <h4>Projeto</h4>
+		            <p>Gemba Training</p>
+		            <p data-toggle="tooltip" data-placement="right" data-delay="500" title="Data da primeira atividade" class="description">Iniciado em : 12/12/2011</p>
+		        </div>
+    		</div>
+
+	        <div class="col-md-4" >
+			    <div class="scoreboard-item title-value">
+			        <h4>Hoje</h4>
+			        <?php if(false) : ?>
+			        <p class="positive">1</p>
+						<?php else : ?>
+			        <p class="negative">1</p>
+			    	<?php endif; ?>
+			        <p class="description">32 Abertos / 2 Fechados</p>
+			    </div>
+	    	</div> -->
+
+	    	<div class="col-md-6">
+	    		<div class="scoreboard-item control-chart" data-control="chart-pie">
+		            <ul>
+		                <li data-color="#95b753">Published <span>84</span></li>
+		                <li data-color="#e5a91a">Drafts <span>12</span></li>
+		                <li data-color="#cc3300">Deleted <span>18</span></li>
+		            </ul>
+		        </div>	
+	    	</div>
+
+	    	<div class="col-md-6">
+				<div class="scoreboard-item control-chart" data-control="chart-bar">
+		            <ul>
+		                <li data-color="#95b753">Published <span>84</span></li>
+		                <li data-color="#e5a91a">Drafts <span>12</span></li>
+		                <li data-color="#cc3300">Deleted <span>18</span></li>
+		            </ul>
+		        </div>
+	    	</div>	
+    	</div>
+
+     	<div class="col-md-6" >
+    		<div class="scoreboard-item title-value">
+				<div id="chart_div"></div>
+	        </div>
+    	</div>
+
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<a href="<?= Backend::url('hjfigueira/bugs/bugs/create') ?>" class="btn btn-primary oc-icon-bug">
+	Abrir Novo Bug
+</a>
+   
+<div class="dropdown">
+    <a href="#" data-toggle="dropdown" class="btn btn-default oc-icon-plus">Alterar Status</a>
+
+    <ul class="dropdown-menu" role="menu" data-dropdown-title="Alterar Status">
+    	<?php foreach([1,2,3] as $status) : ?>
+        	<li role="presentation">
+        		<a role="menuitem" tabindex="-1" data-request="onChangeStatus" class="oc-icon-bug">Group</a>
+    		</li>
+		<?php endforeach; ?>
+    </ul>
+</div>

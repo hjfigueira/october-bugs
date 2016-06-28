@@ -1,0 +1,31 @@
+<?= Block::put('scoreboard') ?>
+    <?php if( false ) : ?>
+        <?= $this->makePartial('projectInfo') ?>
+    <?php endif ?>
+<?php Block::endPut() ?>
+
+<?php Block::put('main-content') ?>
+    <?= $this->listRender() ?>
+<?php Block::endPut() ?>
+
+<?php Block::put('actions') ?>
+    <div style="position: fixed;bottom: 10px;right: 10px;width: 100%;">
+    <a href="<?= $this->menuWidget->getUrl('hjfigueira/bugs/projeto/create/:slug') ?>" class="btn btn-primary oc-icon-bug" style="float: right;">
+        Abrir Novo Bug
+    </a>
+
+    <div class="dropup" style="float: right;margin-right: 10px;">
+
+        <a href="#" data-toggle="dropdown" class="btn btn-default oc-icon-plus">Alterar Status</a>
+
+        <ul class="dropdown-menu" role="menu" data-dropdown-title="Alterar Status">
+            <?php foreach([1,2,3] as $status) : ?>
+            <li role="presentation">
+                <a role="menuitem" tabindex="-1" data-request="onChangeStatus" class="oc-icon-bug">Group</a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+
+    </div>
+</div>
+<?php Block::endPut() ?>

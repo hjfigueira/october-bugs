@@ -1,0 +1,10 @@
+name: Bugs
+form: ~/plugins/hjfigueira/bugs/models/bug/fields.yaml
+modelClass: Hjfigueira\Bugs\Models\Bug
+defaultRedirect: hjfigueira/bugs/bugs
+create:
+    redirect: 'hjfigueira/bugs/bugs/update/:id'
+    redirectClose: hjfigueira/bugs/bugs
+update:
+    redirect: hjfigueira/bugs/bugs
+    redirectClose: hjfigueira/bugs/bugs

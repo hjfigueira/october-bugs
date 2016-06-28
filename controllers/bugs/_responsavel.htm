@@ -1,0 +1,11 @@
+<?php if(is_object($value->avatar)) : ?>
+	
+	<img style="border-radius: 12px; margin-right: 5px" src="<?= $value->avatar->getThumb(25,25,['mode' => 'crop', 'quality' => 100, 'extension' => 'png']) ?>" >
+
+<?php else : ?>
+
+	<img 
+		style="border-radius: 12px; margin-right: 5px; width: 25px; height: 25px; background-color: gray; border: none" src="" >
+
+<?php endif; ?>
+<?= $value->first_name ?> <?= $value->last_name ?>

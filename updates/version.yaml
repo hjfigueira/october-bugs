@@ -1,0 +1,9 @@
+1.0.1:
+    - 'Initialize plugin.'
+    - 'Created table hjfigueira_bugs_bugs'
+    - create_table_bugs.php
+    - create_table_prioridade.php
+    - create_table_severidade.php
+    - create_table_status.php
+    - create_table_comentario.php
+    - create_table_atribuicoes.php

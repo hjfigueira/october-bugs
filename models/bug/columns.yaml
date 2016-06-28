@@ -1,0 +1,55 @@
+columns:
+
+    # pontos :
+    #   label: Pontos
+    #   type : partial
+
+    status :
+        select: (select status_id from `hjfigueira_bugs_status_pivot` where `hjfigueira_bugs_status_pivot`.`bug_id` = hjfigueira_bugs_bugs.id order by id desc limit 1 offset 0)
+        label : Status
+        type : partial
+        sortable : true
+
+    titulo:
+      label: Título
+      type: text
+
+    severidade :
+      label : Severidade
+      type : text
+      valueFrom : titulo
+      relation: severidade
+
+    # projeto :  
+    #   label : Projeto
+    #   type : text
+    #   valueFrom : titulo
+    #   relation: projeto
+
+    # prioridade :
+    #   label : Prioridade
+    #   type : text
+    #   valueFrom : titulo
+    #   relation: prioridade
+
+      # last_status : 
+      #   label : Status
+
+    # versao : 
+    #   label : Versão
+
+    # created_at :
+    #   label: Criação
+    #   type: timesince
+      # format: d/m/Y
+
+    # updated_at:
+    #   label: Atualização
+    #   type: datetime
+    #   format: d/m/Y h:i:s
+
+    # responsavel :
+    #   label : Responsável
+    #   type : partial
+    #   relation: responsavel
+    #   sortable : false

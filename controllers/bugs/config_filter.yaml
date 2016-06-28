@@ -1,0 +1,34 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    prioridade:
+        label: Prioridade
+        modelClass: Hjfigueira\Bugs\Models\Prioridade
+        nameFrom: titulo
+        conditions: prioridade_id in (:filtered)
+
+    severidade:
+        label: Severidade
+        modelClass: Hjfigueira\Bugs\Models\Severidade
+        nameFrom: titulo
+        conditions: severidade_id in (:filtered)
+
+    projeto:
+        label: Projeto
+        modelClass: Hjfigueira\Projetos\Models\Projeto
+        nameFrom: titulo
+        conditions: projeto_id in (:filtered)
+        
+    responsavel:
+      label: Responsável
+      modelClass: Backend\Models\User
+      nameFrom: first_name
+      conditions: responsavel_id in (:filtered)
+
+    minhas:
+        label: Apenas os Meus
+        type: checkbox
+        scope: apenasMinhas

@@ -1,0 +1,6 @@
+plugin:
+    name: 'hjfigueira.bugs::lang.plugin.name'
+    description: 'hjfigueira.bugs::lang.plugin.description'
+    author: 'Hélio Figueira Junior'
+    icon: oc-icon-bug
+    homepage: ''

@@ -1,0 +1,70 @@
+fields:
+
+  prioridade:
+      label: Prioridade
+      type: relation
+      nameFrom: titulo
+      descriptionFrom : descricao
+      span : left
+
+  severidade:
+      label: Severidade
+      type: relation
+      nameFrom: titulo
+      descriptionFrom : descricao
+      span : right
+#
+#  projeto:
+#      label: Projeto
+#      type: relation
+#      nameFrom: titulo
+#      descriptionFrom : descricao
+#      span : right
+
+  titulo :
+    label: Título
+    type : text
+    span : left
+
+  responsavel :
+    label: Responsável
+    type: relation
+    nameFrom: first_name
+    descriptionFrom : last_name
+    span : right
+
+  esperado:
+    comment : Sintaxe de Markdown é suportada
+    label: Resultado Esperado
+    type: textarea
+    size: small
+    span : left
+
+  recebido:
+      comment : Sintaxe de Markdown é suportada
+      label: Resultado Recebido
+      type: textarea
+      size: small
+      span : right
+
+
+
+  etapas : 
+    label : Etapas para Reproduzir
+    commentAbove : Adicione etapas para descrever como o problema pode ser reproduzido
+    type : repeater
+    prompt : Clique aqui para adicionar uma nova etapa
+    span : left
+    form : 
+      fields:
+          etapa : 
+            type : text
+            size : tiny
+            placeholder : Descrição da Ação
+
+  arquivos : 
+    label : Anexos
+    type : fileupload
+    span : right
+    mode : file
+    fileTypes : zip, rar, png, jpg

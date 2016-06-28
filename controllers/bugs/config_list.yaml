@@ -1,0 +1,12 @@
+list: ~/plugins/hjfigueira/bugs/models/bug/columns.yaml
+modelClass: Hjfigueira\Bugs\Models\Bug
+title: Bugs
+showSetup: true
+showCheckboxes: true
+# toolbar:
+#     buttons: list_toolbar
+#     search:
+#         prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'hjfigueira/bugs/bugs/update/:projeto_slug'
+noRecordsMessage : "Hurray ! Sem bugs por aqui ! :D"
+filter: config_filter.yaml
